@@ -1,6 +1,17 @@
 /*
  * Create a list that holds all of your cards
  */
+let allCards = document.querySelectorAll(".card");
+console.log(allCards);
+
+let cardArray = [...allCards];
+
+const deck = document.querySelector(".deck");
+
+let openCards = [];
+
+let matchingCards = [];
+
 
 
 /*
@@ -24,6 +35,17 @@ function shuffle(array) {
 
     return array;
 }
+
+cardArray = shuffle(cardArray);
+
+function newGame(){
+  for (let i = 0; i < cardArray.length; i++) {
+  let card = cardArray[i];
+  deck.appendChild(card);
+  }
+  shuffle(cardArray);
+}
+newGame();
 
 
 /*
